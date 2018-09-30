@@ -118,6 +118,28 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        visview()//TODO:添加视图
+        
+        
+    }
+    func visview() {
+        typealias AudioSample = UIView   //FIXME 支持类型别名
+        let v = AudioSample(frame:CGRect(x: 20, y: 100, width: 200, height: 200))
+        v.backgroundColor = UIColor.red
+        view .addSubview(v) //TODO:swift4.0添加视图
+        
+        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 60))
+        btn.setTitle("我的按钮", for: .normal)
+        btn.setTitleColor(UIColor.green, for: .normal)
+        btn.backgroundColor = UIColor.yellow
+        btn .addTarget(self, action: #selector(click), for: .touchUpInside)
+        v .addSubview(btn)
+    }
+    @objc func click(sender :UIButton) -> () {
+        print(sender)
+    }
+    func practice0() -> () {
         //swift简单练习
         //self.practice()
         //函数和闭包
@@ -134,9 +156,9 @@ class ViewController: UIViewController {
         re = returnFifteen()
         print(re)
         //调用函数--函数可以作为另一个函数的返回值
-        let increment = makeIncrementer()
+        let increment = makeIncrementer() //  TODO:待修改
         re = increment(7)
-        print(re,increment)
+        print(re,increment)             //FIXME:改变
         //函数也可以当做参数传入另一个函数
         let  numbers = [20,19,7,12]
         let isMatch = hasAnyMatches(list: numbers, condition: lessThanTen)
@@ -190,10 +212,7 @@ class ViewController: UIViewController {
         let ace = Rank.jack
         let aceRawValue = ace.rawValue
         print(ace,aceRawValue)
-        
-        
     }
-    
 func greet(person:String,day:String) -> String {
         return "Hello \(person),today is \(day)."
     }
