@@ -8,7 +8,11 @@
 
 import UIKit
 
-class TableViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class TableViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,myDelegate {
+    func delegateMethod() {
+        print("执行代理方法")
+    }
+    
     var mytableview :UITableView!
     var dataSource = ["123","456"]
     internal var nameString: String?
@@ -65,6 +69,10 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         loadData { (result) in
             print(result)
         }
+        let myRequest: MyDelegateDemo = MyDelegateDemo()//TODO:触发无参数的代理方法
+        myRequest.delegate = self
+        myRequest.start()
+        
         
     }
     func loadData(completion: (_ result: [String])->()) -> () {
