@@ -100,6 +100,9 @@ class Square: NamedShape {
 class NamedShape  {
     var numberOfSides: Int = 0
     var name: String
+    /// 重载函数
+    ///
+    /// - Parameter name: name属性
     init(name: String) {
         self.name = name
     }
@@ -121,7 +124,23 @@ class ViewController: UIViewController {
         
         visview()//TODO:添加视图
         
+        demo2()//FIXME:通知的使用
+    }
+    func demo2() -> () {
+        NotificationCenter.default.addObserver(self, selector: #selector(test), name: NSNotification.Name(rawValue: "isTest"), object: nil)
+    }
+    @objc func test(noti :Notification){
+        let str = noti.userInfo!["post"]
+        print(String(describing: str!) + "this notifi")
         
+    }
+    /// 出发通知
+    ///
+    /// - Parameters:
+    ///   - touches: 触摸对象
+    ///   - event: 触摸事件
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        NotificationCenter.default.post(name: NSNotification.Name("isTest"), object: self, userInfo: ["post":"NewTest"])
     }
     func visview() {
         typealias AudioSample = UIView   //FIXME 支持类型别名
