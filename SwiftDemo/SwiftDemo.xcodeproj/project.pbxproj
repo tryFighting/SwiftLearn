@@ -20,6 +20,8 @@
 		7B839B6621702110001E4F46 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B839B6521702110001E4F46 /* LoadViewController.swift */; };
 		7B839B682170253D001E4F46 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B839B672170253D001E4F46 /* Person.swift */; };
 		7B839B6C21702C1E001E4F46 /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B839B6B21702C1E001E4F46 /* UIButton+extension.swift */; };
+		7B86239D21707D50009D0318 /* StoryBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B86239C21707D50009D0318 /* StoryBoardViewController.swift */; };
+		7B86239F217086BC009D0318 /* URLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B86239E217086BC009D0318 /* URLViewController.swift */; };
 		7B9E8131216F1BEA0022153C /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E8130216F1BEA0022153C /* AnimationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		7B839B6521702110001E4F46 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		7B839B672170253D001E4F46 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		7B839B6B21702C1E001E4F46 /* UIButton+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
+		7B86239C21707D50009D0318 /* StoryBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardViewController.swift; sourceTree = "<group>"; };
+		7B86239E217086BC009D0318 /* URLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLViewController.swift; sourceTree = "<group>"; };
 		7B9E8130216F1BEA0022153C /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +124,8 @@
 				7B839B6521702110001E4F46 /* LoadViewController.swift */,
 				7B839B6B21702C1E001E4F46 /* UIButton+extension.swift */,
 				7B839B672170253D001E4F46 /* Person.swift */,
+				7B86239C21707D50009D0318 /* StoryBoardViewController.swift */,
+				7B86239E217086BC009D0318 /* URLViewController.swift */,
 				7B7AFD2420D2789900722E11 /* Main.storyboard */,
 				7B7AFD2720D2789900722E11 /* Assets.xcassets */,
 				7B7AFD2920D2789900722E11 /* LaunchScreen.storyboard */,
@@ -281,10 +287,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B7AFD2320D2789900722E11 /* ViewController.swift in Sources */,
+				7B86239F217086BC009D0318 /* URLViewController.swift in Sources */,
 				7B11D60F216CB81A00BF0227 /* NSBlock.swift in Sources */,
 				7B839B6621702110001E4F46 /* LoadViewController.swift in Sources */,
 				7B11D5A2216C4DC300BF0227 /* MyDelegateDemo.swift in Sources */,
 				7B9E8131216F1BEA0022153C /* AnimationViewController.swift in Sources */,
+				7B86239D21707D50009D0318 /* StoryBoardViewController.swift in Sources */,
 				7B27DC862160C4E200D1523F /* TableViewController.swift in Sources */,
 				7B839B682170253D001E4F46 /* Person.swift in Sources */,
 				7B7AFD2120D2789900722E11 /* AppDelegate.swift in Sources */,
@@ -461,6 +469,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98298VBF9J;
 				INFOPLIST_FILE = SwiftDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = md.SwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -476,6 +485,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98298VBF9J;
 				INFOPLIST_FILE = SwiftDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = md.SwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
