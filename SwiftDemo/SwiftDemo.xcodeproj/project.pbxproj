@@ -17,6 +17,10 @@
 		7B7AFD2B20D2789900722E11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B7AFD2920D2789900722E11 /* LaunchScreen.storyboard */; };
 		7B7AFD3620D2789900722E11 /* SwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7AFD3520D2789900722E11 /* SwiftDemoTests.swift */; };
 		7B7AFD4120D2789900722E11 /* SwiftDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7AFD4020D2789900722E11 /* SwiftDemoUITests.swift */; };
+		7B839B6621702110001E4F46 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B839B6521702110001E4F46 /* LoadViewController.swift */; };
+		7B839B682170253D001E4F46 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B839B672170253D001E4F46 /* Person.swift */; };
+		7B839B6C21702C1E001E4F46 /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B839B6B21702C1E001E4F46 /* UIButton+extension.swift */; };
+		7B9E8131216F1BEA0022153C /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E8130216F1BEA0022153C /* AnimationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		7B7AFD3C20D2789900722E11 /* SwiftDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7AFD4020D2789900722E11 /* SwiftDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemoUITests.swift; sourceTree = "<group>"; };
 		7B7AFD4220D2789900722E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B839B6521702110001E4F46 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
+		7B839B672170253D001E4F46 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		7B839B6B21702C1E001E4F46 /* UIButton+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
+		7B9E8130216F1BEA0022153C /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,10 @@
 				7B27DC852160C4E200D1523F /* TableViewController.swift */,
 				7B11D5A1216C4DC300BF0227 /* MyDelegateDemo.swift */,
 				7B11D60E216CB81A00BF0227 /* NSBlock.swift */,
+				7B9E8130216F1BEA0022153C /* AnimationViewController.swift */,
+				7B839B6521702110001E4F46 /* LoadViewController.swift */,
+				7B839B6B21702C1E001E4F46 /* UIButton+extension.swift */,
+				7B839B672170253D001E4F46 /* Person.swift */,
 				7B7AFD2420D2789900722E11 /* Main.storyboard */,
 				7B7AFD2720D2789900722E11 /* Assets.xcassets */,
 				7B7AFD2920D2789900722E11 /* LaunchScreen.storyboard */,
@@ -270,9 +282,13 @@
 			files = (
 				7B7AFD2320D2789900722E11 /* ViewController.swift in Sources */,
 				7B11D60F216CB81A00BF0227 /* NSBlock.swift in Sources */,
+				7B839B6621702110001E4F46 /* LoadViewController.swift in Sources */,
 				7B11D5A2216C4DC300BF0227 /* MyDelegateDemo.swift in Sources */,
+				7B9E8131216F1BEA0022153C /* AnimationViewController.swift in Sources */,
 				7B27DC862160C4E200D1523F /* TableViewController.swift in Sources */,
+				7B839B682170253D001E4F46 /* Person.swift in Sources */,
 				7B7AFD2120D2789900722E11 /* AppDelegate.swift in Sources */,
+				7B839B6C21702C1E001E4F46 /* UIButton+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
