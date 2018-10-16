@@ -7,10 +7,19 @@
 //
 
 import UIKit
-
+/*
+ 函数实际上是一种特殊的闭包：它是一段能之后被调取的代码。闭包中的代码能访问闭包作用域中的变量和函数
+ 即使闭包时在一个不同的作用域被执行的，你可以使用{}来创建一个匿名闭包。使用in将参数和返回值类型的声明与
+ 闭包函数体进行分离
+ 
+ 使用struct来创建一个结构体，结构体和类有很多相同的地方，比如方法和构造器
+ 区别：结构体是传值  类是传引用
+ 
+ 泛型：在尖括号里写一个名字创建一个泛型函数或者类型
+ */
 class InterviewViewController: UIViewController {
-    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
        /*
          面试题集锦
@@ -30,6 +39,32 @@ class InterviewViewController: UIViewController {
         block()
         
         block1()
+        
+        var numbers = [20,19,7,12]
+        numbers.map ({ (number: Int) -> Int in
+            let result = 3 * number
+            return result
+        })
+        
+        let item =  repeatItem(repeating: "Knick", numerOfLines: 4)
+        print(item)
+    }
+    ///泛型支持
+    func repeatItem<Item>(repeating item: Item,numerOfLines: Int) -> [Item] {
+        var result = [Item]()
+        for _ in 0..<numerOfLines {
+            result.append(item)
+        }
+        return result
+    }
+    /// 函数时第一等类型，这意味着函数可以作为另一个函数的返回值
+    /// 函数也可以当做参数传入另一个参数
+    /// - Returns: 返回一个函数
+    func makeIncrementer() -> ((Int) -> Int) {
+        func addOne(numer: Int) -> Int{
+            return 1 + numer
+        }
+        return addOne
     }
     /// closure没有申明复制拷贝car，所以闭包用的还是全局的car变量
     func block1() -> () {
