@@ -25,11 +25,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        print("Hello,World!")
-        array()
-        set()
-        dictionary()
-        closures() //TODO:闭包操作
+        //命名空间
+        let name = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""
+        print(name);
+        //反射机制加载控制器 命名空间+反射机制
+        self.window = UIWindow()
+        self.window?.backgroundColor = UIColor.white
+        let className = name + "." + "StoryBoardViewController"
+        
+        let vc = NSClassFromString(className) as? UIViewController.Type
+        self.window?.rootViewController = vc?.init()
+        self.window?.makeKeyAndVisible()
+        
+//        print("Hello,World!")
+//        array()
+//        set()
+//        dictionary()
+//        closures() //TODO:闭包操作
         return true
     }
     /// 闭包操作

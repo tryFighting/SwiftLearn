@@ -48,7 +48,7 @@
 		7B11D5A1216C4DC300BF0227 /* MyDelegateDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDelegateDemo.swift; sourceTree = "<group>"; };
 		7B11D60E216CB81A00BF0227 /* NSBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBlock.swift; sourceTree = "<group>"; };
 		7B27DC852160C4E200D1523F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		7B7AFD1D20D2789900722E11 /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B7AFD1D20D2789900722E11 /* BeautifulSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautifulSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7AFD2020D2789900722E11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B7AFD2220D2789900722E11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7B7AFD2520D2789900722E11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		7B7AFD1E20D2789900722E11 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7B7AFD1D20D2789900722E11 /* SwiftDemo.app */,
+				7B7AFD1D20D2789900722E11 /* BeautifulSwift.app */,
 				7B7AFD3120D2789900722E11 /* SwiftDemoTests.xctest */,
 				7B7AFD3C20D2789900722E11 /* SwiftDemoUITests.xctest */,
 			);
@@ -175,7 +175,7 @@
 			);
 			name = SwiftDemo;
 			productName = SwiftDemo;
-			productReference = 7B7AFD1D20D2789900722E11 /* SwiftDemo.app */;
+			productReference = 7B7AFD1D20D2789900722E11 /* BeautifulSwift.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7B7AFD3020D2789900722E11 /* SwiftDemoTests */ = {
@@ -480,7 +480,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = md.SwiftDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BeautifulSwift;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -496,7 +496,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = md.SwiftDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BeautifulSwift;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
