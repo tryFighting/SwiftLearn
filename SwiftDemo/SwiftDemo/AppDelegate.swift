@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //反射机制加载控制器 命名空间+反射机制
         self.window = UIWindow()
         self.window?.backgroundColor = UIColor.white
-        let className = name + "." + "StoryBoardViewController"
+        let className = name + "." + "InterviewViewController"
         
         let vc = NSClassFromString(className) as? UIViewController.Type
         self.window?.rootViewController = vc?.init()

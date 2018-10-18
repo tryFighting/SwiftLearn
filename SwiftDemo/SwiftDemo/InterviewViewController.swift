@@ -21,6 +21,49 @@ class InterviewViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        /*
+         闭包可以捕获和存储其所在上下文中任意常量和变量的引用,被称为包裹常量和变量.
+         .全局函数是一个有名字但不会捕获任何值的闭包
+         .嵌套函数是一个有名字并可以捕获其封闭函数域内值的闭包
+         .闭包表达式是一个利用轻量级语法所写的可以捕获其上下文中变量或常量值的匿名闭包
+         闭包表达式语法一般形式:{
+         (parameter) -> returnType in
+         statements
+         }
+         */
+        let names = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
+        /// 内联闭包参数
+        /// 函数和返回值类型都写在{}闭包函数体部分由关键字in引入，该关键字表示闭包的参数和返回值类型已经开始
+        /// - Parameters:
+        ///   - s1:
+        ///   - s2:
+        /// - Returns:
+        func backward(_ s1: String,_ s2:String) ->Bool{
+            return s1 > s2
+        }
+        var reversedNames = names.sorted()
+        print(reversedNames)
+        //backward 函数 闭包函数较短  可以写成一行代码
+        
+        /*
+         内联闭包表达式构造的闭包作为参数传递给函数或方法时,总是能够推断出闭包的参数和返回值类型
+         这就意味着闭包作为函数或者方法的参数时，你几乎不需要利用完整格式构造内联闭包
+         单行表达式闭包可以通过省略return来隐思返回单行表达式的结果
+         */
+        reversedNames = names.sorted(by: { s1, s2 in return s1 > s2 } )
+        reversedNames = names.sorted(by: { s1, s2 in s1 > s2 } )
+        reversedNames = names.sorted(by: {(_ s1: String,_ s2: String)->Bool in return s1 > s2})
+        //swift自动为内联闭包提供了参数名称缩写功能，可以直接通过$0,$1,$2来顺序调用闭包的参数
+        reversedNames = names.sorted(by: { $0 > $1 } )
+        //运算符方法
+        reversedNames = names.sorted(by: >)
+         print(reversedNames)
+        
+        
+        
+        
+        //尾随闭包:
+        reversedNames = names.sorted() { $0 > $1 }
        /*
          面试题集锦
          */
