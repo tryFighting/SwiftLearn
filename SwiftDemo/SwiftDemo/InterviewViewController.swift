@@ -127,7 +127,32 @@ class InterviewViewController: UIViewController {
         print(instance.x)
         instance.completionHandlers.first?()
         print(instance.x)
+        /*
+         自动闭包：是一种自动创建的闭包，用于包装传递给函数作为参数的表达式
+         这种闭包不接受任何参数，当它被调用时，会返回被包装在其中表达式的值
+         这种便利语法让你能够省略闭包的花括号，用一个普通的表达式来代替显式的闭包
+         
+         自动闭包让你能够延迟求值，因为知道你调用这个闭包，代码段才会被执行。延迟求值对于那些有副作用和高计算成本的代码说是很有益处的，因为它使得你能控制代码的执行时机
+         */
+        var customersInLine = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
+        print(customersInLine.count)
+        let customerProvider = {customersInLine.remove(at: 0)}
+        print(customersInLine.count)
+        print("Now serving\(customerProvider())")
+        print(customersInLine.count)
+        //自动闭包与逃逸闭包的混合使用
+        var customerProviders: [() -> String] = []
+        func collectCustomerProviders(_ customerProvider: @autoclosure @escaping () -> String) {
+            customerProviders.append(customerProvider)
+        }
+        collectCustomerProviders(customersInLine.remove(at: 0))
+        collectCustomerProviders(customersInLine.remove(at: 0))
         
+        print("Collected \(customerProviders.count) closures.")
+        // 打印 "Collected 2 closures."
+        for customerProvider in customerProviders {
+            print("Now serving \(customerProvider())!")
+        }
        /*
          面试题集锦
          */
