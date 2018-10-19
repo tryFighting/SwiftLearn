@@ -63,7 +63,56 @@ class InterviewViewController: UIViewController {
         
         
         //尾随闭包:
+        /*
+         当闭包非常长以至于不能再一行中进行书写时,尾随闭包就会变得非常有用
+         Swift的Array类型有一个map(_:)方法，这个方法获取一个闭包表达式作为其唯一的参数
+         该闭包函数会为数组中的每一个元素调用一次，并返回该元素所映射的值。具体的映射方式和返回值类型
+         由闭包来指定
+         */
         reversedNames = names.sorted() { $0 > $1 }
+        let digitNames = [
+            0: "Zero", 1: "One", 2: "Two",   3: "Three", 4: "Four",
+            5: "Five", 6: "Six", 7: "Seven", 8: "Eight", 9: "Nine"
+        ]
+        let number = [16, 58, 510]
+        let string = number.map{
+           (num) -> String in
+            var num = num
+            var output = ""
+            repeat{
+                output = digitNames[num%10]! + output
+                num /= 10
+            }while num > 0
+            return output
+        }
+        print(string)
+        
+        /*
+         值捕获
+         闭包可以在其被定义的上下文捕获常量或变量，即使定义这些常量和变量的原作用域已经不存在，闭包仍然可以
+         在闭包函数体内引用和修改这些值
+         */
+        /// 尾随闭包
+        ///嵌套函数 实现闭包
+        /// - Parameter amount: 参数
+        /// - Returns: () ->Int 一个返回Int的函数，该函数在每次调用时不接收任何参数，只返回一个Int
+        func makeIncrementer(forIncrement amount: Int) ->() ->Int{
+            var runningTotal = 0
+            //函数捕获上下文的变量
+            func incrementer() ->Int{
+                runningTotal += amount
+                return runningTotal
+            }
+            return incrementer
+        }
+        //notice:如果一个值不会被闭包改变，或者在闭包创建后不会改变，swift可能会改为捕获并保存一份对值的拷贝，swift也会负责被捕获变量的所有内存管理工作，包括释放不再需要的变量  函数和变量都是引用类型
+        let incrementByTen = makeIncrementer(forIncrement: 10)
+        print(incrementByTen())
+        print(incrementByTen())
+        print(incrementByTen())
+        let incrementBySeven = makeIncrementer(forIncrement: 7)
+        print(incrementBySeven())
+         print(incrementByTen())
        /*
          面试题集锦
          */
