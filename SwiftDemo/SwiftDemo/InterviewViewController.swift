@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 /*
  函数实际上是一种特殊的闭包：它是一段能之后被调取的代码。闭包中的代码能访问闭包作用域中的变量和函数
  即使闭包时在一个不同的作用域被执行的，你可以使用{}来创建一个匿名闭包。使用in将参数和返回值类型的声明与
@@ -113,6 +114,20 @@ class InterviewViewController: UIViewController {
         let incrementBySeven = makeIncrementer(forIncrement: 7)
         print(incrementBySeven())
          print(incrementByTen())
+        /*
+         逃逸闭包
+         当一个闭包作为参数传到一个函数中，但是这个闭包在函数返回之后才被执行  我们就该称该闭包从函数中逃逸。
+         当你定义接收的闭包作为参数的函数时，你可以在参数名之前标注@escaping，用来指明这个闭包时允许逃逸出这个函数的
+         将这个闭包保存在一个函数外部定义的变量中。
+         例子：很多启动异步操作的函数接受一个闭包参数作为completion Handler
+         这类函数会在异步操作开始之后立刻返回 但是闭包知道异步操作结束后z才会被调用
+         */
+        let instance = SomeClass()
+        instance.doSomething()
+        print(instance.x)
+        instance.completionHandlers.first?()
+        print(instance.x)
+        
        /*
          面试题集锦
          */

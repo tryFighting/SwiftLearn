@@ -23,6 +23,7 @@
 		7B86239D21707D50009D0318 /* StoryBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B86239C21707D50009D0318 /* StoryBoardViewController.swift */; };
 		7B86239F217086BC009D0318 /* URLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B86239E217086BC009D0318 /* URLViewController.swift */; };
 		7B9E8131216F1BEA0022153C /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E8130216F1BEA0022153C /* AnimationViewController.swift */; };
+		7BA28B4221798B0000743402 /* SomeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA28B4121798B0000743402 /* SomeClass.swift */; };
 		7BD44FF22174225900040140 /* InterviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD44FF12174225900040140 /* InterviewViewController.swift */; };
 		7BD44FF721749C9700040140 /* Pizzera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD44FF621749C9700040140 /* Pizzera.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		7B86239C21707D50009D0318 /* StoryBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardViewController.swift; sourceTree = "<group>"; };
 		7B86239E217086BC009D0318 /* URLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLViewController.swift; sourceTree = "<group>"; };
 		7B9E8130216F1BEA0022153C /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		7BA28B4121798B0000743402 /* SomeClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeClass.swift; sourceTree = "<group>"; };
 		7BD44FF12174225900040140 /* InterviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewViewController.swift; sourceTree = "<group>"; };
 		7BD44FF621749C9700040140 /* Pizzera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizzera.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 				7B86239C21707D50009D0318 /* StoryBoardViewController.swift */,
 				7B86239E217086BC009D0318 /* URLViewController.swift */,
 				7BD44FF12174225900040140 /* InterviewViewController.swift */,
+				7BA28B4121798B0000743402 /* SomeClass.swift */,
 				7BD44FF621749C9700040140 /* Pizzera.swift */,
 				7B7AFD2420D2789900722E11 /* Main.storyboard */,
 				7B7AFD2720D2789900722E11 /* Assets.xcassets */,
@@ -294,6 +297,7 @@
 			files = (
 				7B7AFD2320D2789900722E11 /* ViewController.swift in Sources */,
 				7B86239F217086BC009D0318 /* URLViewController.swift in Sources */,
+				7BA28B4221798B0000743402 /* SomeClass.swift in Sources */,
 				7B11D60F216CB81A00BF0227 /* NSBlock.swift in Sources */,
 				7B839B6621702110001E4F46 /* LoadViewController.swift in Sources */,
 				7B11D5A2216C4DC300BF0227 /* MyDelegateDemo.swift in Sources */,
