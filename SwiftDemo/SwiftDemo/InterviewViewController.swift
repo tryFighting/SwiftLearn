@@ -153,6 +153,9 @@ class InterviewViewController: UIViewController {
         for customerProvider in customerProviders {
             print("Now serving \(customerProvider())!")
         }
+        
+        Dictionary("hello".map { ($0, 1) }, uniquingKeysWith: +)
+        print(Dictionary("hello".map { ($0, 1) }, uniquingKeysWith: +))
        /*
          面试题集锦
          */

@@ -26,16 +26,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         //命名空间
-        let name = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""
-        print(name);
-        //反射机制加载控制器 命名空间+反射机制
-        self.window = UIWindow()
-        self.window?.backgroundColor = UIColor.white
-        let className = name + "." + "InterviewViewController"
-        
-        let vc = NSClassFromString(className) as? UIViewController.Type
-        self.window?.rootViewController = vc?.init()
-        self.window?.makeKeyAndVisible()
+//        let name = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""
+//        print(name);
+//        //反射机制加载控制器 命名空间+反射机制
+//        self.window = UIWindow()
+//        self.window?.backgroundColor = UIColor.white
+//        let className = name + "." + "InterviewViewController"
+//        
+//        let vc = NSClassFromString(className) as? UIViewController.Type
+//        self.window?.rootViewController = vc?.init()
+//        self.window?.makeKeyAndVisible()
         
 //        print("Hello,World!")
 //        array()
