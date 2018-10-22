@@ -14,6 +14,36 @@ import UIKit
  存储属性就是存储在特定类或结构体实例里的一个常量或变量。存储属性可以是变量或常量修饰属性
  
  */
+/// self消除方法参数x和实例属性x之间的歧义
+/*
+ 你需要在某个特定的方法中修改结构体或者枚举的属性，你可以为这个方法选择可变行为（mutating）,然后z就可以从其方法内部改变它的属性，并且这个方法做的任何改变都会在方法执行结束时写回到原始结构体中。方法中可以给隐含的self属性赋予一个全新的实例，这个新实例方法结束时会h替换现存实例。
+ */
+struct Point {
+    var x = 0.0 ,y = 0.0
+    mutating func moveByX(deltaX: Double,y deltaY: Double){
+        x += deltaX
+        y += deltaY
+    }
+}
+class Counter {
+    var count = 0
+    /// 让计数器按一递增
+    func increment() {
+        count += 1
+    }
+    
+    /// 让计数器按一个指定的整数值递增
+    ///
+    /// - Parameter amount:
+    func increment(by amount: Int) {
+        count += amount
+    }
+    //重置为0
+    func reset() {
+        count = 0
+    }
+    
+}
 struct FixedLengthRange {
     var firstValue: Int
     
@@ -60,6 +90,20 @@ class PropertyViewController: UIViewController {
         stepCounter.totalSteps = 200
         stepCounter.totalSteps = 360
         stepCounter.totalSteps = 896
+        
+        //实例方法 类型方法
+        /*
+         实例方法是属于某个特定类，结构体或者枚举类型的方法
+         */
+        let counter = Counter()
+        counter.increment()
+        counter.increment(by: 5)
+        counter.reset()
+        
+        //结构体或枚举的修改
+        var somePoint =  Point(x: 1.0, y: 1.0)
+        somePoint.moveByX(deltaX: 2.0, y: 3.0)
+        print("The point is now at (\(somePoint.x), \(somePoint.y))")
         
     }
     
