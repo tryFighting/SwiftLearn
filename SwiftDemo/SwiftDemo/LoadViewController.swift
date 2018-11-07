@@ -44,6 +44,7 @@ class LoadViewController: UIViewController {
         
         
         
+        
     }
     
     /// URL的构造函数可以返回nil,构造函数就是要实例化对象

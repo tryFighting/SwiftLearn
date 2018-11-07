@@ -7,6 +7,18 @@
 //
 
 import UIKit
+///当使用枚举或者结构体实现Togglable协议时，需要d提供一个带有mutating前缀的方法
+enum onOffSwitch:  Togglable{
+    case off,on
+   mutating func toggle() {
+    switch self {
+    case .off:
+        self = .on
+    case .on:
+        self = .off
+    }
+    }
+}
 enum Rank: Int {
     case ace = 1
     case two, three, four, five, six, seven, eight, nine, ten

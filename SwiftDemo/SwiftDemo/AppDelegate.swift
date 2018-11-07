@@ -42,6 +42,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        set()
 //        dictionary()
 //        closures() //TODO:闭包操作
+        
+        //extension应用
+        3.repeatitions {
+            print("Hello")
+        }
+        var someInt = 3
+        someInt.squre()
+        let y = 12[0]
+        print(y)
+        
+        //协议的应用
+        let john = Perso(fullName:"xxx")
+        
+        var ncc = StarShip(name: "Enterprise", prefix: "USS")
+        
+        var d6 = Dice(sides: 6, generator: LinearCongruentialGenerator() as RandomNumberGenerator)
+        
+        for _ in 1...5 {
+            print("Random dice roll is\(d6.roll())")
+        }
+        
         return true
     }
     /// 闭包操作
