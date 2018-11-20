@@ -32,6 +32,7 @@
 		7BD44FF22174225900040140 /* InterviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD44FF12174225900040140 /* InterviewViewController.swift */; };
 		7BD44FF721749C9700040140 /* Pizzera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD44FF621749C9700040140 /* Pizzera.swift */; };
 		7BE1C285217D4FD200DBB91A /* PropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE1C284217D4FD200DBB91A /* PropertyViewController.swift */; };
+		7BF6794321A38BDD0064AE38 /* AccessControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6794221A38BDD0064AE38 /* AccessControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		7BD44FF12174225900040140 /* InterviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewViewController.swift; sourceTree = "<group>"; };
 		7BD44FF621749C9700040140 /* Pizzera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizzera.swift; sourceTree = "<group>"; };
 		7BE1C284217D4FD200DBB91A /* PropertyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyViewController.swift; sourceTree = "<group>"; };
+		7BF6794221A38BDD0064AE38 /* AccessControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				7B9E0A70218B00B500CB179E /* Protocal.swift */,
 				7BBA8E112192C0A40087B333 /* SnakesAndLadders.swift */,
 				7B9E0A6E218AF50700CB179E /* Double.swift */,
+				7BF6794221A38BDD0064AE38 /* AccessControl.swift */,
 				7B7AFD2420D2789900722E11 /* Main.storyboard */,
 				7B7AFD2720D2789900722E11 /* Assets.xcassets */,
 				7B7AFD2920D2789900722E11 /* LaunchScreen.storyboard */,
@@ -333,6 +336,7 @@
 				7B7AFD2120D2789900722E11 /* AppDelegate.swift in Sources */,
 				7B9E0A6F218AF50700CB179E /* Double.swift in Sources */,
 				7B839B6C21702C1E001E4F46 /* UIButton+extension.swift in Sources */,
+				7BF6794321A38BDD0064AE38 /* AccessControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
