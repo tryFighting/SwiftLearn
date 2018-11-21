@@ -16,6 +16,11 @@ import UIKit
  Private限制实体只能在其定义的作用域，以及同一文件内extension访问，如果功能的部分细节只需要在当前作用域内使用，可以使用Private来将其隐藏
  
  */
+///添加新功能2
+func newFunction() -> (Int) {
+    let a = 2;
+    return a
+}
 class AccessControl: NSObject {
     var myNumber = 1
     
