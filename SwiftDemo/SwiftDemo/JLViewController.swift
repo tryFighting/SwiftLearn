@@ -25,7 +25,7 @@ class JLViewController: UIViewController {
        ///数组基本应用
         let nums = [1,2,3]
         let num = [Int](repeating: 0, count: 5)
-        print(nums,num)
+        //print(nums,num)
         
         ///声明一个可以修改的数组
         var mutableNums = [3,1,2]

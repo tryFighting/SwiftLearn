@@ -7,6 +7,104 @@
 //
 
 import UIKit
+///泛型where语句
+func allItemsMatch<C1: Container,C2: Container>(_ someContainer: C1, _ anotherContainer: C2) -> Bool {
+//    where C1.ItemType == C2.ItemType,C1.ItemType: Equatable{
+//        ///检查两个容器含有相同数量的元素
+//        if someContainer.count != anotherContainer.count {
+//            return false
+//        }
+//        ///检查每一对元素是否相等
+//        for i in 0..<someContainer.count {
+//            if someContainer[i] != anotherContainer[i]{
+//                return false
+//            }
+//        }
+//      
+//        
+//    }
+      return true
+}
+/*
+ 定义一个协议时,有时候声明一个或多个关联类型作为协议定义的一部分将会非常有用，你可以通过associatedtype关键字来指定关联类型
+ */
+///关联类型
+///Container协议提供的功能：必须通过append(_:)方法添加一个新元素到容器里，必须可以通过count属性获取容器中元素的数量，并返回一个Int值， 必须通过索引值类型值为Int下标检索到容器中的每一个元素
+protocol Container {
+    associatedtype ItemType
+    mutating func append(_ item: ItemType)
+    var count: Int{ get }
+    subscript(i: Int) -> ItemType { get }
+}
+///泛型实践 查找字符串的位置
+func findIndex<T:Equatable>(of valueToFind: T,in array:[T]) -> Int? {
+    for (index,value) in array.enumerated() {
+        if value == valueToFind {
+            return index
+        }
+    }
+    return nil
+}
+///类型约束实践(非泛型)
+func findIndex(ofString valueToFind: String, in array: [String]) -> Int? {
+    for (index,value) in array.enumerated() {
+        if value == valueToFind{
+            return index
+        }
+    }
+    return nil
+}
+///泛型支持交换两个数
+func swapTwoValues<T>(_ a: inout T,_ b: inout T) {
+    let temp = a
+    a = b
+    b = temp
+}
+///泛型版本的栈
+/*
+ 创建items属性，使用Element类型的空数组对其进行初始化
+ 指定push 方法的唯一参数 item必须是Element类型
+ 指定pop方法返回的值类型必须是Element类型
+ */
+struct Stack<Element>: Container {
+    var items = [Element]()
+    mutating func push(_ item: Element){
+        items.append(item)
+    }
+    mutating func pop() ->Element{
+        return items.removeLast()
+    }
+    ///协议实现部分
+    mutating func append(_ item: Element) {
+        self.push(item)
+    }
+    var count: Int{
+        return items.count
+    }
+    subscript(i: Int) -> Element{
+        return items[i]
+    }
+    
+}
+///扩展泛型类型的Stack
+///只读属性，返回栈顶元素而不会将其移除
+extension Stack{
+    var topItem: Element?{
+        return items.isEmpty ? nil : items[items.count - 1]
+    }
+    
+}
+///非泛型版本的栈
+struct IntStack {
+    var items = [Int]()
+    mutating func push (_ item: Int){
+        items.append(item)
+    }
+    mutating func pop() -> Int{
+        return items.removeLast()
+    }
+    
+}
 ///当使用枚举或者结构体实现Togglable协议时，需要d提供一个带有mutating前缀的方法
 enum onOffSwitch:  Togglable{
     case off,on
@@ -133,6 +231,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ///泛型函数交换两个数
+        var a = 3
+        var b = 4
+        
+        swapTwoValues(&a, &b)
         
         visview()//TODO:添加视图
         
