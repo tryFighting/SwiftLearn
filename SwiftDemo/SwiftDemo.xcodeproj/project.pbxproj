@@ -37,6 +37,7 @@
 		7BEF508221B60DE3006573F5 /* refreshing.caf in Resources */ = {isa = PBXBuildFile; fileRef = 7BEF507E21B60DE3006573F5 /* refreshing.caf */; };
 		7BEF508321B60DE3006573F5 /* load_success.caf in Resources */ = {isa = PBXBuildFile; fileRef = 7BEF507F21B60DE3006573F5 /* load_success.caf */; };
 		7BEF508421B60DE3006573F5 /* tapped.caf in Resources */ = {isa = PBXBuildFile; fileRef = 7BEF508021B60DE3006573F5 /* tapped.caf */; };
+		7BEF508C21B63EC0006573F5 /* bg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7BEF508B21B63EC0006573F5 /* bg.mp3 */; };
 		7BF6794321A38BDD0064AE38 /* AccessControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6794221A38BDD0064AE38 /* AccessControl.swift */; };
 		F1647C3B21B57426007CD9ED /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1647C3A21B57426007CD9ED /* MusicViewController.m */; };
 		F1647C3E21B57C45007CD9ED /* MusicTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F1647C3D21B57C45007CD9ED /* MusicTool.m */; };
@@ -97,6 +98,7 @@
 		7BEF507E21B60DE3006573F5 /* refreshing.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = refreshing.caf; sourceTree = "<group>"; };
 		7BEF507F21B60DE3006573F5 /* load_success.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = load_success.caf; sourceTree = "<group>"; };
 		7BEF508021B60DE3006573F5 /* tapped.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tapped.caf; sourceTree = "<group>"; };
+		7BEF508B21B63EC0006573F5 /* bg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bg.mp3; sourceTree = "<group>"; };
 		7BF6794221A38BDD0064AE38 /* AccessControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControl.swift; sourceTree = "<group>"; };
 		F1647C3921B57426007CD9ED /* MusicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
 		F1647C3A21B57426007CD9ED /* MusicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		7BEF507C21B60DE3006573F5 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				7BEF508B21B63EC0006573F5 /* bg.mp3 */,
 				7BEF507D21B60DE3006573F5 /* load_failure.caf */,
 				7BEF507E21B60DE3006573F5 /* refreshing.caf */,
 				7BEF507F21B60DE3006573F5 /* load_success.caf */,
@@ -335,6 +338,7 @@
 				7BEF508321B60DE3006573F5 /* load_success.caf in Resources */,
 				7B7AFD2620D2789900722E11 /* Main.storyboard in Resources */,
 				7BEF508221B60DE3006573F5 /* refreshing.caf in Resources */,
+				7BEF508C21B63EC0006573F5 /* bg.mp3 in Resources */,
 				7BEF508121B60DE3006573F5 /* load_failure.caf in Resources */,
 				7BEF508421B60DE3006573F5 /* tapped.caf in Resources */,
 			);
