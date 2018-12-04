@@ -31,6 +31,7 @@
 		7BBA8E122192C0A40087B333 /* SnakesAndLadders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA8E112192C0A40087B333 /* SnakesAndLadders.swift */; };
 		7BD44FF22174225900040140 /* InterviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD44FF12174225900040140 /* InterviewViewController.swift */; };
 		7BD44FF721749C9700040140 /* Pizzera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD44FF621749C9700040140 /* Pizzera.swift */; };
+		7BDA46BB21B4FDDD00D102FA /* ImageHandleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDA46BA21B4FDDD00D102FA /* ImageHandleViewController.swift */; };
 		7BE1C285217D4FD200DBB91A /* PropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE1C284217D4FD200DBB91A /* PropertyViewController.swift */; };
 		7BF6794321A38BDD0064AE38 /* AccessControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6794221A38BDD0064AE38 /* AccessControl.swift */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		7BBA8E112192C0A40087B333 /* SnakesAndLadders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakesAndLadders.swift; sourceTree = "<group>"; };
 		7BD44FF12174225900040140 /* InterviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewViewController.swift; sourceTree = "<group>"; };
 		7BD44FF621749C9700040140 /* Pizzera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizzera.swift; sourceTree = "<group>"; };
+		7BDA46BA21B4FDDD00D102FA /* ImageHandleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHandleViewController.swift; sourceTree = "<group>"; };
 		7BE1C284217D4FD200DBB91A /* PropertyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyViewController.swift; sourceTree = "<group>"; };
 		7BF6794221A38BDD0064AE38 /* AccessControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +158,7 @@
 				7BBA8E112192C0A40087B333 /* SnakesAndLadders.swift */,
 				7B9E0A6E218AF50700CB179E /* Double.swift */,
 				7BF6794221A38BDD0064AE38 /* AccessControl.swift */,
+				7BDA46BA21B4FDDD00D102FA /* ImageHandleViewController.swift */,
 				7B7AFD2420D2789900722E11 /* Main.storyboard */,
 				7B7AFD2720D2789900722E11 /* Assets.xcassets */,
 				7B7AFD2920D2789900722E11 /* LaunchScreen.storyboard */,
@@ -322,6 +325,7 @@
 				7B86239F217086BC009D0318 /* URLViewController.swift in Sources */,
 				7BA28B4221798B0000743402 /* SomeClass.swift in Sources */,
 				7B11D60F216CB81A00BF0227 /* NSBlock.swift in Sources */,
+				7BDA46BB21B4FDDD00D102FA /* ImageHandleViewController.swift in Sources */,
 				7B839B6621702110001E4F46 /* LoadViewController.swift in Sources */,
 				7B11D5A2216C4DC300BF0227 /* MyDelegateDemo.swift in Sources */,
 				7B9E8131216F1BEA0022153C /* AnimationViewController.swift in Sources */,
