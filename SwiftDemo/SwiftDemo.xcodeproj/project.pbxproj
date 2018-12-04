@@ -38,6 +38,8 @@
 		7BEF508321B60DE3006573F5 /* load_success.caf in Resources */ = {isa = PBXBuildFile; fileRef = 7BEF507F21B60DE3006573F5 /* load_success.caf */; };
 		7BEF508421B60DE3006573F5 /* tapped.caf in Resources */ = {isa = PBXBuildFile; fileRef = 7BEF508021B60DE3006573F5 /* tapped.caf */; };
 		7BF6794321A38BDD0064AE38 /* AccessControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6794221A38BDD0064AE38 /* AccessControl.swift */; };
+		F100ED4521B6C3AE00EA47B4 /* VideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = F100ED4421B6C3AE00EA47B4 /* VideoController.m */; };
+		F100ED4721B6C97E00EA47B4 /* ffmpegdemo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F100ED4621B6C97E00EA47B4 /* ffmpegdemo.mp4 */; };
 		F1647C3B21B57426007CD9ED /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1647C3A21B57426007CD9ED /* MusicViewController.m */; };
 		F1647C3E21B57C45007CD9ED /* MusicTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F1647C3D21B57C45007CD9ED /* MusicTool.m */; };
 		F1E5562221A9A8B2003598B7 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E5562121A9A8B2003598B7 /* Student.m */; };
@@ -98,6 +100,9 @@
 		7BEF507F21B60DE3006573F5 /* load_success.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = load_success.caf; sourceTree = "<group>"; };
 		7BEF508021B60DE3006573F5 /* tapped.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tapped.caf; sourceTree = "<group>"; };
 		7BF6794221A38BDD0064AE38 /* AccessControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControl.swift; sourceTree = "<group>"; };
+		F100ED4321B6C3AE00EA47B4 /* VideoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoController.h; sourceTree = "<group>"; };
+		F100ED4421B6C3AE00EA47B4 /* VideoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoController.m; sourceTree = "<group>"; };
+		F100ED4621B6C97E00EA47B4 /* ffmpegdemo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ffmpegdemo.mp4; sourceTree = "<group>"; };
 		F1647C3921B57426007CD9ED /* MusicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
 		F1647C3A21B57426007CD9ED /* MusicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
 		F1647C3C21B57C45007CD9ED /* MusicTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicTool.h; sourceTree = "<group>"; };
@@ -182,6 +187,8 @@
 				F1E5562121A9A8B2003598B7 /* Student.m */,
 				F1647C3921B57426007CD9ED /* MusicViewController.h */,
 				F1647C3A21B57426007CD9ED /* MusicViewController.m */,
+				F100ED4321B6C3AE00EA47B4 /* VideoController.h */,
+				F100ED4421B6C3AE00EA47B4 /* VideoController.m */,
 				F1647C3C21B57C45007CD9ED /* MusicTool.h */,
 				F1647C3D21B57C45007CD9ED /* MusicTool.m */,
 				7B7AFD2420D2789900722E11 /* Main.storyboard */,
@@ -217,6 +224,7 @@
 				7BEF507D21B60DE3006573F5 /* load_failure.caf */,
 				7BEF507E21B60DE3006573F5 /* refreshing.caf */,
 				7BEF507F21B60DE3006573F5 /* load_success.caf */,
+				F100ED4621B6C97E00EA47B4 /* ffmpegdemo.mp4 */,
 				7BEF508021B60DE3006573F5 /* tapped.caf */,
 			);
 			path = Audio;
@@ -337,6 +345,7 @@
 				7BEF508221B60DE3006573F5 /* refreshing.caf in Resources */,
 				7BEF508121B60DE3006573F5 /* load_failure.caf in Resources */,
 				7BEF508421B60DE3006573F5 /* tapped.caf in Resources */,
+				F100ED4721B6C97E00EA47B4 /* ffmpegdemo.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +387,7 @@
 				7B9E0A6D218AF19200CB179E /* Extension.swift in Sources */,
 				7BD44FF22174225900040140 /* InterviewViewController.swift in Sources */,
 				7BD44FF721749C9700040140 /* Pizzera.swift in Sources */,
+				F100ED4521B6C3AE00EA47B4 /* VideoController.m in Sources */,
 				7B9957CF21880BA100A48A03 /* GenericityStatement.swift in Sources */,
 				7B839B682170253D001E4F46 /* Person.swift in Sources */,
 				7BBA8E122192C0A40087B333 /* SnakesAndLadders.swift in Sources */,
