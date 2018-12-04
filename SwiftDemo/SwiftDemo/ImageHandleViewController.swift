@@ -12,11 +12,17 @@ class ImageHandleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let defaultImage = UIImage(named: "");
-        let image: UIImage = UIImage(named:"penguin_walk01") ?? defaultImage;
+        view.backgroundColor = UIColor.white
+        let image: UIImage = UIImage(named:"penguin_walk01")!
+        
+        let imageV = UIImageView(image: hanleImage(image:image, size:CGSize(width: 100, height: 100), backColor: view.backgroundColor))
+        imageV.center = view.center;
+        view .addSubview(imageV);
         
         // Do any additional setup after loading the view.
-        hanleImage(image:image), size:cgsi , backColor: <#T##UIColor?#>)
+        
+        
+    
     }
     /// 处理图片
     ///
