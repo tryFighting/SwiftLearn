@@ -22,12 +22,14 @@
 		7B839B6C21702C1E001E4F46 /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B839B6B21702C1E001E4F46 /* UIButton+extension.swift */; };
 		7B86239D21707D50009D0318 /* StoryBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B86239C21707D50009D0318 /* StoryBoardViewController.swift */; };
 		7B86239F217086BC009D0318 /* URLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B86239E217086BC009D0318 /* URLViewController.swift */; };
+		7B8BD98E223A2504002B94A0 /* LayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BD98D223A2504002B94A0 /* LayerViewController.swift */; };
 		7B9957CF21880BA100A48A03 /* GenericityStatement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9957CE21880BA100A48A03 /* GenericityStatement.swift */; };
 		7B9E0A6D218AF19200CB179E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E0A6C218AF19200CB179E /* Extension.swift */; };
 		7B9E0A6F218AF50700CB179E /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E0A6E218AF50700CB179E /* Double.swift */; };
 		7B9E0A71218B00B500CB179E /* Protocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E0A70218B00B500CB179E /* Protocal.swift */; };
 		7B9E8131216F1BEA0022153C /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E8130216F1BEA0022153C /* AnimationViewController.swift */; };
 		7BA28B4221798B0000743402 /* SomeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA28B4121798B0000743402 /* SomeClass.swift */; };
+		7BA7C90D21EDC6B800799D12 /* DataStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA7C90C21EDC6B800799D12 /* DataStructViewController.swift */; };
 		7BBA8E122192C0A40087B333 /* SnakesAndLadders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA8E112192C0A40087B333 /* SnakesAndLadders.swift */; };
 		7BD44FF22174225900040140 /* InterviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD44FF12174225900040140 /* InterviewViewController.swift */; };
 		7BD44FF721749C9700040140 /* Pizzera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD44FF621749C9700040140 /* Pizzera.swift */; };
@@ -77,12 +79,14 @@
 		7B839B6B21702C1E001E4F46 /* UIButton+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
 		7B86239C21707D50009D0318 /* StoryBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardViewController.swift; sourceTree = "<group>"; };
 		7B86239E217086BC009D0318 /* URLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLViewController.swift; sourceTree = "<group>"; };
+		7B8BD98D223A2504002B94A0 /* LayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerViewController.swift; sourceTree = "<group>"; };
 		7B9957CE21880BA100A48A03 /* GenericityStatement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericityStatement.swift; sourceTree = "<group>"; };
 		7B9E0A6C218AF19200CB179E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7B9E0A6E218AF50700CB179E /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		7B9E0A70218B00B500CB179E /* Protocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocal.swift; sourceTree = "<group>"; };
 		7B9E8130216F1BEA0022153C /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		7BA28B4121798B0000743402 /* SomeClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeClass.swift; sourceTree = "<group>"; };
+		7BA7C90C21EDC6B800799D12 /* DataStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructViewController.swift; sourceTree = "<group>"; };
 		7BBA8E112192C0A40087B333 /* SnakesAndLadders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakesAndLadders.swift; sourceTree = "<group>"; };
 		7BD44FF12174225900040140 /* InterviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewViewController.swift; sourceTree = "<group>"; };
 		7BD44FF621749C9700040140 /* Pizzera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizzera.swift; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 				7BBA8E112192C0A40087B333 /* SnakesAndLadders.swift */,
 				7B9E0A6E218AF50700CB179E /* Double.swift */,
 				7BF6794221A38BDD0064AE38 /* AccessControl.swift */,
+				7BA7C90C21EDC6B800799D12 /* DataStructViewController.swift */,
+				7B8BD98D223A2504002B94A0 /* LayerViewController.swift */,
 				F1E5562021A9A8B2003598B7 /* Student.h */,
 				F1E5562121A9A8B2003598B7 /* Student.m */,
 				F1647C3921B57426007CD9ED /* MusicViewController.h */,
@@ -348,9 +354,11 @@
 				7B27DC862160C4E200D1523F /* TableViewController.swift in Sources */,
 				F1E5562221A9A8B2003598B7 /* Student.m in Sources */,
 				7B9E0A6D218AF19200CB179E /* Extension.swift in Sources */,
+				7BA7C90D21EDC6B800799D12 /* DataStructViewController.swift in Sources */,
 				7BD44FF22174225900040140 /* InterviewViewController.swift in Sources */,
 				7BD44FF721749C9700040140 /* Pizzera.swift in Sources */,
 				7B9957CF21880BA100A48A03 /* GenericityStatement.swift in Sources */,
+				7B8BD98E223A2504002B94A0 /* LayerViewController.swift in Sources */,
 				7B839B682170253D001E4F46 /* Person.swift in Sources */,
 				7BBA8E122192C0A40087B333 /* SnakesAndLadders.swift in Sources */,
 				F1647C3B21B57426007CD9ED /* MusicViewController.m in Sources */,

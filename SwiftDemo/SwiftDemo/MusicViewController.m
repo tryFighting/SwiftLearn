@@ -10,7 +10,8 @@
  */
 #import "MusicViewController.h"
 #import <AVFoundation/AVFoundation.h>
-@interface MusicViewController ()
+#import <AVKit/AVKit.h>
+@interface MusicViewController ()<AVPlayerViewControllerDelegate>
 
 @end
 
@@ -31,8 +32,14 @@
     ///释放音效内存
     //AudioServicesDisposeSystemSoundID(soundID);
 }
-
-
+- (void)playVieo{
+    //NSURL *url = [[NSBundle mainBundle] URLForResource:@"" withExtension:nil];
+    NSURL *url = [NSURL URLWithString:@"https://v.youku.com/v_show/id_XMzkwNDE1ODAyMA==.html?spm=..m_26657.5~5~1~3!2~A"];
+    AVPlayerViewController *av = [AVPlayerViewController new];
+    av.player = [[AVPlayer alloc] initWithURL:url];
+    av.delegate = self;
+    [av.player play];
+}
 
 
 
@@ -71,7 +78,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self play];
+    [self playVieo];
 }
 
 - (void)didReceiveMemoryWarning {
