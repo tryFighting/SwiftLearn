@@ -64,11 +64,74 @@ class StepCounter {
     }
     
 }
+func sum(x: Int,y:Int) -> Int{
+    return x + y
+}
+func sum1(num1 x: Int,num2 y:Int) -> Int{
+    return x + y
+}
+func sum2(x: Int = 3,y:Int = 3) -> Int{
+    return x + y
+}
+/// 尾随闭包
+func demoClousure(completion:@escaping (_ result: [String]) ->()) ->(){
+    DispatchQueue.global().async {
+        ///尾随闭包  最后一个形参可省略
+        Thread.sleep(forTimeInterval: 5)
+        
+        let json = ["苹果","华为","谷歌"]
+        DispatchQueue.main.async(execute: {
+           
+            
+            completion(json)
+        })
+        ///可缩减
+        /*
+         DispatchQueue.main.async {
+         
+         
+         completion(json)
+         }
+         */
+    }
+}
 class PropertyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//       print(sum(x: 1, y: 2))
+//        ///形参列表  无用到的可以用 _ 忽略
+//        print(sum1(num1: 2, num2: 2))
+//        ///默认值函数调用
+//        print(sum2(),sum2( y: 1),sum2(x: 2,y: 3),sum2(x: 2))
+        let p = sum2
+        print(p(1,2))
+        view.backgroundColor = UIColor.white
+        ///闭包学习 b1自动推到 () -> ()
+        let b1 = {
+            print("无参数无返回值的闭包")
+        };
+        b1()
+        ///有参数，无返回值  (Any) -> ()
+        let b2 = {
+            intdex in
+            print(intdex)
+        }
+        b2(222)
+        
+        ///有参数，有返回值
+        let b3 = {
+            (ing: Int) -> Int in
+            return ing + 5
+        }
+        print(b3(333))
+        
+        
+        ///尾随闭包
+        demoClousure { (result) in
+            print(result)
+        }
+        
         var rangeOfThreeItems = FixedLengthRange(firstValue: 0, length: 3)
         rangeOfThreeItems.firstValue = 6
         
