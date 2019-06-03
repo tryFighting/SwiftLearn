@@ -25,17 +25,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+       
         //命名空间
-//        let name = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""
-//        print(name);
-//        //反射机制加载控制器 命名空间+反射机制
-//        self.window = UIWindow()
-//        self.window?.backgroundColor = UIColor.white
-//        let className = name + "." + "InterviewViewController"
-//        
-//        let vc = NSClassFromString(className) as? UIViewController.Type
-//        self.window?.rootViewController = vc?.init()
-//        self.window?.makeKeyAndVisible()
+        let name = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""
+        print(name);
+        //反射机制加载控制器 命名空间+反射机制
+        self.window = UIWindow()
+        self.window?.backgroundColor = UIColor.white
+        let className = name + "." + "InterviewViewController"
+        
+        let vc = NSClassFromString(className) as? UIViewController.Type
+        self.window?.rootViewController = vc?.init()
+        self.window?.makeKeyAndVisible()
         
 //        print("Hello,World!")
 //        array()
@@ -44,24 +45,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        closures() //TODO:闭包操作
         
         //extension应用
-        3.repeatitions {
-            print("Hello")
-        }
-        var someInt = 3
-        someInt.squre()
-        let y = 12[0]
-        print(y)
-        
-        //协议的应用
-        let john = Perso(fullName:"xxx")
-        
-        var ncc = StarShip(name: "Enterprise", prefix: "USS")
-        
-        var d6 = Dice(sides: 6, generator: LinearCongruentialGenerator() as RandomNumberGenerator)
-        
-        for _ in 1...5 {
-            print("Random dice roll is\(d6.roll())")
-        }
+//        3.repeatitions {
+//            print("Hello")
+//        }
+//        var someInt = 3
+//        someInt.squre()
+//        let y = 12[0]
+//        print(y)
+//        
+//        //协议的应用
+//        let john = Perso(fullName:"xxx")
+//        
+//        var ncc = StarShip(name: "Enterprise", prefix: "USS")
+//        
+//        var d6 = Dice(sides: 6, generator: LinearCongruentialGenerator() as RandomNumberGenerator)
+//        
+//        for _ in 1...5 {
+//            print("Random dice roll is\(d6.roll())")
+//        }
         
         return true
     }

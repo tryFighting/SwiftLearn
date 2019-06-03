@@ -23,8 +23,8 @@ class LoadViewController: UIViewController {
         loadbaiduData()
         // Do any additional setup after loading the view.
         ///便利构造函数 正常的构造函数一定会创建对象  便利构造函数，条件不满足直接返回nil,将不再创建对象，节省内存开销
-        let p = Person(name: "老万", age: 18)
-        print("\(p?.name)\(p?.age)")
+//        let p = Person(name: "老万", age: 18)
+//        print("\(p?.name)\(p?.age)")
         
         /*
          便利构造函数创建控制n避免写冗余的代码

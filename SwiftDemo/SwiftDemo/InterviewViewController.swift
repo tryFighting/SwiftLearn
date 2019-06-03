@@ -84,10 +84,39 @@ import UIKit
  
  泛型：在尖括号里写一个名字创建一个泛型函数或者类型
  */
+enum numTest: Int,Error {
+    case _0,_1,_2,_3
+    case nothing = 999
+}
 class InterviewViewController: UIViewController {
+    var title1: String = ""{
+        willSet{
+            print("将标题\(title1)设置到\(newValue)")
+        }
+        didSet{
+            print("已将标题从\(oldValue)设置到\(title1)")
+        }
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        //协议中是动态派发，扩展是静态派发
+        //函数式编程
+       print((0...10).map{ $0 * $0 }.filter{$0 % 2 == 0})
+        //try?和try!主要用在对异常抛出函数进行不需要捕捉异常的处理，一般不建议用try!,后期容易出现问题
+        print("即将开始测试")
+        do {
+            try errorTest(by: 0)
+        } catch  {
+            print("--测试---中")
+        }
+        print("测试结束")
+        
+        
+        let p: Person = Person(name: "HH", age: 13, title: "DDDD")
+        print("\(String(describing: p.name)) \(p.age) \(String(describing: p.title))")
+        print(Person.propertyList())
         /*
          闭包可以捕获和存储其所在上下文中任意常量和变量的引用,被称为包裹常量和变量.
          .全局函数是一个有名字但不会捕获任何值的闭包
@@ -249,6 +278,23 @@ class InterviewViewController: UIViewController {
         
         let item =  repeatItem(repeating: "Knick", numerOfLines: 4)
         print(item)
+    }
+    
+    func errorTest(by num:Int)throws -> String {
+        switch num {
+        case 0:
+            throw numTest._0
+        case 1:
+            throw numTest._1
+        case 2:
+            throw numTest._2
+        case 3:
+            throw numTest._3
+        case 10:
+            throw numTest.nothing
+        default:
+            return "OK" + "\(num)"
+        }
     }
     ///泛型支持
     func repeatItem<Item>(repeating item: Item,numerOfLines: Int) -> [Item] {
