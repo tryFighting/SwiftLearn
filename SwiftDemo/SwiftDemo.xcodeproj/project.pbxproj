@@ -30,6 +30,8 @@
 		7B9E8131216F1BEA0022153C /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E8130216F1BEA0022153C /* AnimationViewController.swift */; };
 		7BA28B4221798B0000743402 /* SomeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA28B4121798B0000743402 /* SomeClass.swift */; };
 		7BA7C90D21EDC6B800799D12 /* DataStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA7C90C21EDC6B800799D12 /* DataStructViewController.swift */; };
+		7BB9EF1B22F907A80094A317 /* NewSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB9EF1A22F907A80094A317 /* NewSwiftViewController.swift */; };
+		7BB9EF1D22F908580094A317 /* Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB9EF1C22F908580094A317 /* Public.swift */; };
 		7BBA8E122192C0A40087B333 /* SnakesAndLadders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA8E112192C0A40087B333 /* SnakesAndLadders.swift */; };
 		7BD44FF22174225900040140 /* InterviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD44FF12174225900040140 /* InterviewViewController.swift */; };
 		7BD44FF721749C9700040140 /* Pizzera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD44FF621749C9700040140 /* Pizzera.swift */; };
@@ -87,6 +89,8 @@
 		7B9E8130216F1BEA0022153C /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		7BA28B4121798B0000743402 /* SomeClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeClass.swift; sourceTree = "<group>"; };
 		7BA7C90C21EDC6B800799D12 /* DataStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructViewController.swift; sourceTree = "<group>"; };
+		7BB9EF1A22F907A80094A317 /* NewSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSwiftViewController.swift; sourceTree = "<group>"; };
+		7BB9EF1C22F908580094A317 /* Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Public.swift; sourceTree = "<group>"; };
 		7BBA8E112192C0A40087B333 /* SnakesAndLadders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakesAndLadders.swift; sourceTree = "<group>"; };
 		7BD44FF12174225900040140 /* InterviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewViewController.swift; sourceTree = "<group>"; };
 		7BD44FF621749C9700040140 /* Pizzera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizzera.swift; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				7B7AFD2020D2789900722E11 /* AppDelegate.swift */,
+				7BB9EF1A22F907A80094A317 /* NewSwiftViewController.swift */,
+				7BB9EF1C22F908580094A317 /* Public.swift */,
 				7B7AFD2220D2789900722E11 /* ViewController.swift */,
 				7B27DC852160C4E200D1523F /* TableViewController.swift */,
 				7B11D5A1216C4DC300BF0227 /* MyDelegateDemo.swift */,
@@ -357,6 +363,8 @@
 				7BA7C90D21EDC6B800799D12 /* DataStructViewController.swift in Sources */,
 				7BD44FF22174225900040140 /* InterviewViewController.swift in Sources */,
 				7BD44FF721749C9700040140 /* Pizzera.swift in Sources */,
+				7BB9EF1B22F907A80094A317 /* NewSwiftViewController.swift in Sources */,
+				7BB9EF1D22F908580094A317 /* Public.swift in Sources */,
 				7B9957CF21880BA100A48A03 /* GenericityStatement.swift in Sources */,
 				7B8BD98E223A2504002B94A0 /* LayerViewController.swift in Sources */,
 				7B839B682170253D001E4F46 /* Person.swift in Sources */,

@@ -134,6 +134,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         visview()//TODO:添加视图
         
         demo2()//FIXME:通知的使用
@@ -244,7 +245,7 @@ class ViewController: UIViewController {
         let aceRawValue = ace.rawValue
         print(ace,aceRawValue)
     }
-func greet(person:String,day:String) -> String {
+    @objc func greet(person:String,day:String) -> String {
         return "Hello \(person),today is \(day)."
     }
     func hasAnyMatches(list: [Int],condition: (Int) ->Bool) -> Bool {
