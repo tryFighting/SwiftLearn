@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+enum ExceptionError: Error {
+    case httpCode(Int)
+}
 class NewSwiftViewController: UIViewController {
     lazy var learnArr: Array<String> = {
         var arr = Array<String>()
@@ -24,7 +26,7 @@ class NewSwiftViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Swift学习"
         self.view.addSubview(self.swiftLearnTableView)
-        self.learnArr = ["常用的几个高阶函数","高阶函数扩展","优雅的判断多个值中是否包含某一值","Hashable,Equatable和Comparable协议","可变参数函数"]
+        self.learnArr = ["常用的几个高阶函数","高阶函数扩展","优雅的判断多个值中是否包含某一值","Hashable,Equatable和Comparable协议","可变参数函数","where关键字","switch中判断枚举类型，尽量避免使用default","iOS9之后全局动态修改StatusBar样式","使用面向协议实现app的主题功能","Swift中多继承的实现"]
         self.swiftLearnTableView.reloadData()
     }
 }
@@ -109,19 +111,74 @@ extension NewSwiftViewController{
         let wordArr = line.split(whereSeparator: {$0 == " "})
         print(wordArr)
     }else if learnIndex == 2{
-        
+        ///优雅的判断多个值是否含有一个值
+        let string = "one"
+        if string == "one" || string == "two" || string == "three"{
+            print("含有某一个")
+        }
+        if ["one","two"].contains(where: {$0 == "one"}){
+            print("one")
+        }
+        ///自己手动实现一个any
+        if string == any(of: "one","two","three"){
+            print("one")
+        }
     }else if learnIndex == 3{
+        ///Hashable,Equatable,Compareable协议
+        let a1 = Animal(type: "Cat", age: 4)
+        let a2 = Animal(type: "Dog", age: 1)
+        let a3 = Animal(type: "Cat", age: 3)
+        let a4 = Animal(type: "Cat", age: 10)
+        ///从小到大排列
+        let sortedAnimals = [a1,a2,a3,a4].sorted(by: <)
+        sortedAnimals.forEach { (animal) in
+            print(animal.type)
+        }
         
+        print(a1==a2)
+        print(a1.hashValue)
     }else if learnIndex == 4{
-        
+        ///可变参数函数
+        print([2,3,4,5,6].reduce((0), {$0+$1}))
+        sumTotal(values: 1,2)
+        ///也可以为UIView添加extension实现添加多个子控件
     }else if learnIndex == 5{
-        
+        ///where关键字的用法
+        let arr = [1,2,3,4]
+        for num in arr where num % 2 == 0{
+            print(num)///打印偶数
+        }
+        do{
+           try throwError()
+        }catch ExceptionError.httpCode(let httpCode) where httpCode >= 500{
+            print("server error")
+        }catch{
+            print("other error")
+        }
+        print([1,2,3,4].sum)
+        ///为某些高阶函数的限定条件
+        let names = ["John","IJ","Jack"]
+        let firstName = names.first { (name) -> Bool in
+            return name.first == "K"
+        }
+        print(firstName ?? "KONG")
+        let contains = names.contains { (name) -> Bool in
+            return name == "IJ"
+        }
+        print(contains)//TRUE
     }else if learnIndex == 6{
-        
+        ///switch中判断枚举类型，尽量避免使用default,后期添加新的枚举类型，忘记在switch处理，就会报错，这样可以提高代码的健壮性
     }else if learnIndex == 7{
         
     }
   }
+    func sumTotal(values: Int...) ->Int{
+        var result = 0
+        values.forEach { (a) in
+            result += a
+        }
+        return result
+    }
 }
 // MARK: - map函数的实现原理,map的实现无非就是创建一个空数组，通过for循环遍历每个元素通过传入函数处理后添加到空数组中，只不过swift的实现更加高效一点
 extension Sequence{
@@ -152,5 +209,74 @@ class Pet {
     init(type: String,age: Int) {
         self.type = type
         self.age = age
+    }
+}
+// MARK: - 自己手动实现一个any，需要遵守实现Equatable协议
+extension NewSwiftViewController{
+   private func any<T: Equatable>(of values: T...) -> EquatableValueSequence<T>{
+        return EquatableValueSequence(values: values)
+    }
+    struct EquatableValueSequence<T: Equatable> {
+        fileprivate let values:[T]
+        static func == (lhs: EquatableValueSequence<T>,rhs: T) -> Bool{
+            return lhs.values.contains(rhs)
+        }
+        static func == (lhs: T,rhs: EquatableValueSequence<T>) -> Bool{
+            return rhs == lhs
+        }
+    }
+}
+
+///实现Hashable协议的方法后我们可以根据hashValue方法来获取该对象的哈希值，字典中的value的存储就是根据key的hashvalue,所以所有字典中的key都要实现Hashable协议
+///实现Equatable协议就可以用等好进行比较了
+///Comparable协议 基于Equatable基础上的Comparable类型，实现相关的方法进行比较
+class Animal: Hashable,Equatable,Comparable{
+    static func < (lhs: Animal, rhs: Animal) -> Bool {
+        if lhs.age < rhs.age {
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    static func == (lhs: Animal, rhs: Animal) -> Bool {
+        if lhs.type == rhs.type && lhs.age == rhs.age {
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    let type: String
+    let age: Int
+    init(type: String,age: Int) {
+        self.type = type
+        self.age = age
+    }
+    var hashValue: Int{
+        return self.type.hashValue ^ self.age.hashValue
+    }
+}
+///where用法
+extension NewSwiftViewController{
+    func throwError() throws{
+        throw ExceptionError.httpCode(500)
+    }
+    ///限定泛型需要遵守的协议
+    func genericFunctionA<S>(str: S) where S: ExpressibleByStringLiteral{
+        print(str)
+    }
+    func genericFunctionB<S:ExpressibleByStringLiteral>(str: S){
+        print(str)
+    }
+}
+// MARK: - 为指定的类添加对应的协议扩展
+extension Sequence where Element: Numeric{
+    var sum: Element{
+        var result: Element = 0
+        for item in self {
+            result += item
+        }
+        return result
     }
 }
