@@ -40,7 +40,11 @@ extension NewSwiftViewController: UITableViewDelegate,UITableViewDataSource{
         cell.textLabel?.text = self.learnArr[indexPath.row]
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let animation = AnimationFactory.makeMoveupWithFade(rowHeight: cell.frame.height, duration: 0.5, delayFactor: 0.05)
+        let animator = Animator(animation: animation)
+        animator.animate(cell: cell, at: indexPath, in: tableView)
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.select(learnIndex: indexPath.row, body: self.learnArr[indexPath.row])
     }
@@ -169,8 +173,29 @@ extension NewSwiftViewController{
     }else if learnIndex == 6{
         ///switch中判断枚举类型，尽量避免使用default,后期添加新的枚举类型，忘记在switch处理，就会报错，这样可以提高代码的健壮性
     }else if learnIndex == 7{
+        ///动态修改StatusBar样式
+        //刷新window下的子控件
+        UIApplication.shared.windows.forEach {
+            $0.reload()
+        }
+    }else if learnIndex == 8{
+        ///使用面向协议实现app的主题功能，修改所有UILabel文字的颜色
+    }else if learnIndex == 9{
+        ///Swift不支持多继承，可以通过协议实现多继承
+    }else if learnIndex == 10{
+        ///华丽的TableView刷新动效
+    }else if learnIndex == 11{
+        
+    }else if learnIndex == 12{
+        
+    }else if learnIndex == 13{
+        
+    }else if learnIndex == 14{
+        
+    }else if learnIndex == 15{
         
     }
+    
   }
     func sumTotal(values: Int...) ->Int{
         var result = 0
@@ -278,5 +303,98 @@ extension Sequence where Element: Numeric{
             result += item
         }
         return result
+    }
+}
+// MARK: - 刷新window下子控件
+extension UIWindow{
+    func reload(){
+        subviews.forEach { (view) in
+            view.removeFromSuperview()
+            addSubview(view)
+        }
+    }
+}
+
+
+
+
+
+///使用工厂设计模式
+typealias Animation = (UITableViewCell,IndexPath,UITableView) -> Void
+enum AnimationFactory {
+    ///淡入效果
+    static func makeFade(duration: TimeInterval,delayFactor: Double) ->Animation{
+        return {cell,indexpath,_ in
+            cell.alpha = 0
+            UIView.animate(withDuration: duration, delay: delayFactor * Double(indexpath.row), animations: {
+                cell.alpha = 1
+            })
+        }
+    }
+    ///弹簧效果
+    static func makeMoveupWithBounce(rowHeight: CGFloat,duration: TimeInterval,delayFactor: Double) -> Animation{
+        return {
+            cell,indexpath,tableview in
+             cell.transform = CGAffineTransform(translationX: 0, y: rowHeight)
+            UIView.animate(
+                withDuration: duration,
+                delay: delayFactor * Double(indexpath.row),
+                usingSpringWithDamping: 0.4,
+                initialSpringVelocity: 0.1,
+                animations: {
+                    cell.transform = CGAffineTransform(translationX: 0, y: 0)
+            })
+        }
+    }
+    ///侧入
+    static func makeSlideIn(duration: TimeInterval,delayFactor: Double) -> Animation{
+        return {
+            cell,indexpath,tableview in
+            cell.transform = CGAffineTransform(translationX: tableview.bounds.width, y: 0)
+            UIView.animate(
+                withDuration: duration,
+                delay: delayFactor * Double(indexpath.row),
+                options: [.curveEaseOut],
+                animations: {
+                    cell.transform = CGAffineTransform(translationX: 0, y: 0)
+            })
+        }
+    }
+    ///弹簧淡入
+    static func makeMoveupWithFade(rowHeight: CGFloat,duration: TimeInterval,delayFactor: Double) -> Animation{
+        return { cell, indexPath, tableView in
+            cell.transform = CGAffineTransform(translationX: 0, y: rowHeight / 2)
+            cell.alpha = 0
+            
+            UIView.animate(
+                withDuration: duration,
+                delay: delayFactor * Double(indexPath.row),
+                options: [.curveEaseInOut],
+                animations: {
+                    cell.transform = CGAffineTransform(translationX: 0, y: 0)
+                    cell.alpha = 1
+            })
+        }
+    }
+}
+final class Animator{
+    private var hasAnimatedAllCells = false
+    private let animation: Animation
+    init(animation: @escaping Animation) {
+        self.animation = animation
+    }
+    func animate(cell: UITableViewCell,at indexPath: IndexPath, in tableView: UITableView) -> Void {
+        guard !hasAnimatedAllCells else {
+            return
+        }
+        animation(cell,indexPath,tableView)
+        ///确保每个cell动画只执行一次
+        hasAnimatedAllCells = tableView.isLastVisibleCell(at: indexPath)
+    }
+}
+extension UITableView{
+    func isLastVisibleCell(at indexPath: IndexPath) -> Bool {
+        guard let lastIndex = indexPathsForVisibleRows?.last else { return false }
+        return lastIndex  == indexPath
     }
 }
