@@ -26,7 +26,25 @@ class NewSwiftViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Swift学习"
         self.view.addSubview(self.swiftLearnTableView)
-        self.learnArr = ["常用的几个高阶函数","高阶函数扩展","优雅的判断多个值中是否包含某一值","Hashable,Equatable和Comparable协议","可变参数函数","where关键字","switch中判断枚举类型，尽量避免使用default","iOS9之后全局动态修改StatusBar样式","使用面向协议实现app的主题功能","Swift中多继承的实现"]
+        self.learnArr = ["常用的几个高阶函数",
+                         "高阶函数扩展",
+                         "优雅的判断多个值中是否包含某一值",
+                         "Hashable,Equatable和Comparable协议",
+                         "可变参数函数",
+                         "where关键字","switch中判断枚举类型，尽量避免使用default",
+                         "iOS9之后全局动态修改StatusBar样式",
+                         "使用面向协议实现app的主题功能",
+                         "Swift中多继承的实现",
+                         "华丽的Tableview的刷新动效",
+                         "实现一个不基于Runtime的KVO",
+                         "实现多重代理",
+                         "自动检查控制器是否被销毁",
+                         "向控制器中注入代码",
+                         "向Extension添加存储属性",
+                         "用闭包实现按钮的链式点击事件",
+                         "用闭包实现链式监听实现",
+                         "用闭包实现通知的监听事件",
+                         "AppDelegate解耦"]
         self.swiftLearnTableView.reloadData()
     }
 }
@@ -180,19 +198,54 @@ extension NewSwiftViewController{
         }
     }else if learnIndex == 8{
         ///使用面向协议实现app的主题功能，修改所有UILabel文字的颜色
+        print("使用面向协议实现app的主题功能，修改所有UILabel文字的颜色")
     }else if learnIndex == 9{
         ///Swift不支持多继承，可以通过协议实现多继承
+        print("Swift不支持多继承，可以通过协议实现多继承")
     }else if learnIndex == 10{
         ///华丽的TableView刷新动效
+        print("华丽的TableView刷新动效")
     }else if learnIndex == 11{
-        
+        ///Swift实现KVO
+        print("Swift并没有在语言上支持KVO,如果要使用需导入Foundation框架，被观察对象必须继承自NSObject,通过拿到属性的set方法去搞事情")
     }else if learnIndex == 12{
+        ///实现多重代理
         
+        print("""
+实现多重代理见下方
+应用场景:IM消息接收之后在多个地方做回调，比如显示消息，改变小红点，显示消息数
+"""
+)
+        
+        let cat = Cat()
+        let dog = Dog()
+        let cat1 = Cat()
+        
+        let master = Master()
+        let delegate = masterOrderDelegateManager([cat,dog])
+        delegate.add(cat1)
+        delegate.remove(dog)
+        delegate.remove(cat)
+        master.delegate = delegate
+        master.orderToEat()
     }else if learnIndex == 13{
-        
+        ///自动检查控制器被销毁
+        ///需要在viewdiddisappear调用  发生循环引用就不会被销毁  会被报错
+        print("扩展UIViewController")
     }else if learnIndex == 14{
-        
+        ///向控制器中注入代码
+        print("向控制器中注入代码")
     }else if learnIndex == 15{
+        
+    }else if learnIndex == 16{
+        
+    }else if learnIndex == 17{
+        
+    }else if learnIndex == 18{
+        
+    }else if learnIndex == 19{
+        
+    }else if learnIndex == 20{
         
     }
     
@@ -396,5 +449,90 @@ extension UITableView{
     func isLastVisibleCell(at indexPath: IndexPath) -> Bool {
         guard let lastIndex = indexPathsForVisibleRows?.last else { return false }
         return lastIndex  == indexPath
+    }
+}
+///多重代理的x实现过程
+///1.定义协议
+protocol MasterOrderDelegate: class {
+    func toEat(_ food: String)
+}
+///2.定义一个类：用来管理遵守协议的类
+class masterOrderDelegateManager: MasterOrderDelegate {
+    
+    
+    private let multiDelegate: NSHashTable<AnyObject> = NSHashTable.weakObjects()
+    init(_ delegates: [MasterOrderDelegate]) {
+        delegates.forEach(multiDelegate.add)
+    }
+    func toEat(_ food: String) {
+        invoke({$0.toEat(food)})
+    }
+    //添加遵守协议的类
+    func add(_ delegate: MasterOrderDelegate){
+        multiDelegate.add(delegate)
+    }
+    
+    //删除指定遵守协议的类
+    func remove(_ delegatrTomove: MasterOrderDelegate){
+        invoke {
+            if $0 === delegatrTomove as AnyObject{
+                multiDelegate.remove($0)
+            }
+        }
+    }
+    
+    //删除所有遵守协议的类
+    func removeAll(){
+        multiDelegate.removeAllObjects()
+    }
+    //遍历所有遵守协议的类
+    private func invoke(_ invocation: (MasterOrderDelegate) ->Void){
+        for delegate in multiDelegate.allObjects.reversed() {
+            invocation(delegate as! MasterOrderDelegate)
+        }
+    }
+}
+class Master {
+    weak var delegate: MasterOrderDelegate?
+    func orderToEat(){
+        delegate?.toEat("meat")
+    }
+}
+class Dog {
+    
+}
+extension Dog: MasterOrderDelegate{
+    func toEat(_ food: String) {
+        print("\(type(of: self)) is eating \(food)")
+    }
+}
+class Cat {
+}
+extension Cat: MasterOrderDelegate {
+    func toEat(_ food: String) {
+        print("\(type(of: self)) is eating \(food)")
+    }
+}
+// MARK: - 自动检查控制器是否被销毁 isBeingDismissed，isMovingFromParent这两个属性都为true即是销毁
+extension UIViewController{
+    public func dch_checkDeallocation(afterDelay delay: TimeInterval = 2.0){
+        let rootParentViewController = dch_rootParentViewController
+        if isMovingFromParentViewController || rootParentViewController.isBeingDismissed {
+            let disapperanceSource: String = isMovingFromParentViewController ?"remove from its parent" : "dismissed"
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+                [weak self] in
+                if let VC = self {
+                    assert(self == nil, "\(VC.description) not deallocated after being \(disapperanceSource)")
+                }
+
+            })
+        }
+    }
+    private var dch_rootParentViewController: UIViewController{
+        var root = self
+        while let parent = root.parent {
+            root = parent
+        }
+        return root
     }
 }
